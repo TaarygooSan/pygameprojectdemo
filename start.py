@@ -38,6 +38,8 @@ BLACK = 0, 0, 0  # RGB色域黑色
 pygame.display.set_caption("pygame游戏之旅")  # 设置窗口名称
 ball = pygame.image.load("PYG02-ball.gif")  # 导入图片，表示为surface对象
 ballrect = ball.get_rect()  # 返回覆盖图像的矩形Rect对象
+fps = 200
+fclock = pygame.time.Clock()
 
 while True:
     for event in pygame.event.get():
@@ -53,3 +55,4 @@ while True:
     screen.fill(BLACK)  # 填充背景颜色
     screen.blit(ball, ballrect)  # 将ball图像绘制到ballrect矩形上
     pygame.display.update()  # 刷新屏幕
+    fclock.tick(fps)
